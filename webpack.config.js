@@ -29,8 +29,8 @@ module.exports = {
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
       {
-        test: /\.css$/,
-        loader: 'raw'
+        test: /\.(scss|css)$/,
+        loader: 'raw!css!sass'
       }
     ]
   },
