@@ -3,9 +3,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    'polyfills': './app/polyfills.ts',
-    'vendor': './app/vendor.ts',
-    'app': './app/main.ts'
+    'polyfills': './src/polyfills.ts',
+    'vendor': './src/vendor.ts',
+    'app': './src/main.ts'
   },
   output: {
     path: 'build',
@@ -19,6 +19,10 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'ts!angular2-template'
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw'
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -35,7 +39,7 @@ module.exports = {
       name: ['app', 'vendor', 'polyfills']
     }),
     new HtmlWebpackPlugin({
-      template: './app/index.html'
+      template: './src/index.html'
     })
   ]
 }
